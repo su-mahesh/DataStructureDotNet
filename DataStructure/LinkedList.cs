@@ -66,8 +66,13 @@ namespace DataStructure
             {
                 if (temp.data == PreviousNode.data)
                 {
+                    if (temp == Tail)
+                    {
+                        Tail = NewNode;
+                    }
                     NewNode.next = temp.next;
                     temp.next = NewNode;
+                    
                     break;
                 }
                 temp = temp.next;
@@ -162,6 +167,36 @@ namespace DataStructure
             }
 
             return size;
+        }
+
+        public void AddNodeInSort(Node node)
+        {
+            if (Head == null && Tail == null)
+            {
+                Head = node;
+                Tail = node;
+            }
+            else
+            {
+                if (Head.data > node.data)
+                {
+                    AddNode(node);
+                }
+                else if (Tail.data < node.data)
+                {
+                    AppendNode(node);
+                }
+                else
+                {
+                    Node temp = Head;
+                    while (temp.next != null && node.data > temp.next.data)
+                    {
+                        temp = temp.next;
+                    }
+                    node.next = temp.next;
+                    temp.next = node;
+                }                
+            }            
         }
     }
 }

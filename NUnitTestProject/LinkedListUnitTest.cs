@@ -134,17 +134,17 @@ namespace NUnitTestProject
         [Test]
         public void GivenNodes_WhenInserted_ShouldPassLinkedListTest()
         {
-            Node PreviousNode = new Node(56);
-            Node NextNode = new Node(70);
-            Node NewNode = new Node(30);
+            Node node1 = new Node(56);
+            Node node2 = new Node(70);
+            Node node3 = new Node(30);
 
-            List.AppendNode(PreviousNode);
-            List.AppendNode(NextNode);
-            List.InsertNode(NewNode, PreviousNode);
+            List.AppendNode(node1);
+            List.AppendNode(node2);
+            List.InsertNode(node3, node1);
 
-            bool result = List.Head.Equals(PreviousNode) &&
-                          List.Head.next.Equals(NewNode) &&
-                          List.Tail.Equals(NextNode);
+            bool result = List.Head.Equals(node1) &&
+                          List.Head.next.Equals(node3) &&
+                          List.Tail.Equals(node2);
             Assert.IsTrue(result);
         }
 
@@ -167,6 +167,28 @@ namespace NUnitTestProject
 
             bool result = List.Head.Equals(node1) &&
                           List.Head.next.Equals(node2) &&
+                          List.Tail.Equals(node4);
+            Assert.IsTrue(result);
+        }
+
+        [Test]
+        public void GivenNodes_WhenAddInSorted_ShouldPassLinkedListTest()
+        {
+            Node node1 = new Node(56);
+            Node node2 = new Node(30);
+            Node node3 = new Node(40);
+            Node node4 = new Node(70);
+
+            List.AddNodeInSort(node1);
+            List.AddNodeInSort(node2);
+            List.AddNodeInSort(node3);
+            List.AddNodeInSort(node4);
+
+            int size = List.GetSize();
+            Console.WriteLine(size);
+
+            bool result = List.Head.Equals(node2) &&
+                          List.Head.next.Equals(node3) &&
                           List.Tail.Equals(node4);
             Assert.IsTrue(result);
         }
