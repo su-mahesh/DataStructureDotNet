@@ -58,5 +58,25 @@ namespace DataStructure
                 Tail = node;
             }
         }
+
+        public void InsertNode(Node NewNode, Node PreviousNode)
+        {
+            Node temp = Head;
+            while(temp != null)
+            {
+                if (temp.data == PreviousNode.data)
+                {
+                    NewNode.next = temp.next;
+                    temp.next = NewNode;
+                    break;
+                }
+                temp = temp.next;
+            }
+
+            if (temp == null)
+            {
+                Console.WriteLine("node not found");
+            }
+        }
     }
 }
