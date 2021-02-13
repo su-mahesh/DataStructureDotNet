@@ -63,13 +63,13 @@ namespace NUnitTestProject
         [Test]
         public void GivenNodes_WhenInsertedInBetween_ShouldPassLinkedListTest()
         {
-            Node PreviousNode = new Node(56);           
-            Node NextNode = new Node(70);
-            Node NewNode = new Node(30);
-            
-            List.AppendNode(PreviousNode);
-            List.AppendNode(NextNode);
-            List.InsertNode(NewNode, PreviousNode);
+            Node node1 = new Node(56);
+            Node node2 = new Node(30);
+            Node node3 = new Node(70);
+
+            List.AddNode(node2);
+            List.AddNode(node1);
+            List.AppendNode(node3);
 
             bool result = List.Head.Equals(node1) &&
                           List.Head.next.Equals(node2) &&
