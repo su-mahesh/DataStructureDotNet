@@ -29,13 +29,12 @@ namespace DataStructure
             }
         }
 
-        internal void Display()
+        internal void DisplayLinkedList()
         {
             Node temp = Head;
             if (temp == null)
                 Console.WriteLine("Linked list is empty");
             else
-                Console.WriteLine("Linked list:");
             while(temp != null)
             {
                 Console.Write(temp.data);
