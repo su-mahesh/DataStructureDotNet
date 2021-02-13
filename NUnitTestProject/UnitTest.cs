@@ -28,7 +28,7 @@ namespace NUnitTestProject
             Assert.IsTrue(result);
         }
         [Test]
-        public void GivenNodes_WhenAddedInDesiredSeaquence_ShouldPassLinkedListTest()
+        public void GivenNodes_WhenAdded_ShouldPassLinkedListTest()
         {
             Node node1 = new Node(70);
             List.AddNode(node1);
