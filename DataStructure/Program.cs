@@ -6,7 +6,6 @@ namespace DataStructure
     {
         static void Main()
         {
-           
         }
     }
 }

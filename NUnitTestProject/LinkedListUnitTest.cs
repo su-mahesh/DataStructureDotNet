@@ -146,5 +146,26 @@ namespace NUnitTestProject
                           List.Tail.Equals(NextNode);
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void GivenNodes_WhenDeletedSpecificNode_ShouldPassLinkedListTest()
+        {
+            Node node1 = new Node(56);
+            Node node2 = new Node(30);
+            Node node3 = new Node(40);
+            Node node4 = new Node(70);
+
+            List.AppendNode(node1);
+            List.AppendNode(node2);
+            List.AppendNode(node3);
+            List.AppendNode(node4);
+
+            bool re =  List.DeleteNode(node3);
+
+            bool result = List.Head.Equals(node1) &&
+                          List.Head.next.Equals(node2) &&
+                          List.Tail.Equals(node4);
+            Assert.IsTrue(result);
+        }
     }
 }

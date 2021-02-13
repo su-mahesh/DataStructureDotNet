@@ -121,5 +121,34 @@ namespace DataStructure
             }
             return false;
         }
+
+        public bool DeleteNode(Node DeleteNode)
+        {
+            
+            Node temp = Head;
+            if (!IsEmpty())
+            {
+                if (DeleteNode.data.Equals(Head.data))
+                {
+                    Pop();
+                    return true;
+                }
+                if (DeleteNode.data.Equals(Tail.data))
+                {
+                    PopLast();
+                    return true;
+                }
+                while (temp != null)
+                {
+                    if (temp.next != null && temp.next.data.Equals(DeleteNode.data))
+                    {
+                        temp.next = DeleteNode.next;
+                        return true;
+                    }
+                    temp = temp.next;
+                }
+            }             
+            return false;
+        }
     }
 }
