@@ -42,5 +42,22 @@ namespace NUnitTestProject
                           List.Tail.Equals(node1);
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void GivenNodes_WhenAppended_ShouldPassLinkedListTest()
+        {
+            Node node1 = new Node(56);
+            Node node2 = new Node(30);
+            Node node3 = new Node(70);
+
+            List.AppendNode(node1);
+            List.AppendNode(node2);
+            List.AppendNode(node3);
+
+            bool result = List.Head.Equals(node1) &&
+                          List.Head.next.Equals(node2) &&
+                          List.Tail.Equals(node3);
+            Assert.IsTrue(result);
+        }
     }
 }
