@@ -78,5 +78,15 @@ namespace DataStructure
                 Console.WriteLine("node not found");
             }
         }
+
+        public Node Pop()
+        {
+            Node temp = Head;
+            if (Head != null)
+            {                
+                Head = Head.next;
+            }           
+            return temp;
+        }
     }
 }
