@@ -28,5 +28,10 @@ namespace DataStructure
         {
             return linkedList.Head;
         }
+
+        public Node Pop()
+        {
+            return linkedList.Pop();
+        }
     }
 }
