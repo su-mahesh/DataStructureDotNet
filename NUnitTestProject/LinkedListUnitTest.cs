@@ -1,3 +1,4 @@
+using System;
 using DataStructure;
 using NUnit.Framework;
 
@@ -160,7 +161,9 @@ namespace NUnitTestProject
             List.AppendNode(node3);
             List.AppendNode(node4);
 
-            bool re =  List.DeleteNode(node3);
+            List.DeleteNode(node3);
+            int size = List.GetSize();
+            Console.WriteLine(size);
 
             bool result = List.Head.Equals(node1) &&
                           List.Head.next.Equals(node2) &&

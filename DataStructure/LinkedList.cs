@@ -150,5 +150,18 @@ namespace DataStructure
             }             
             return false;
         }
+
+        public int GetSize()
+        {
+            int size = 0;
+            Node temp = Head;
+            while (temp != null)
+            {
+                size++;
+                temp = temp.next;
+            }
+
+            return size;
+        }
     }
 }
