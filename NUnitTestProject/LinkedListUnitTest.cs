@@ -127,7 +127,6 @@ namespace NUnitTestProject
             List.AppendNode(node3);
 
             bool result = List.IsNodePresent(SearchNode);
-
             Assert.IsTrue(result);
         }
     }
