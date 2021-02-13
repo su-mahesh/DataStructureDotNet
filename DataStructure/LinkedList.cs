@@ -4,20 +4,28 @@ using System.Text;
 
 namespace DataStructure
 {
-    class LinkedList
+    public class LinkedList
     {
-        internal Node Head;
-        internal void Add(int Data)
+        public Node Head;
+        public Node Tail;
+
+        public LinkedList()
         {
-            Node node = new Node(Data);
-            if (this.Head == null)
-                this.Head = node;
+            Head = null;
+            Tail = null;
+        }
+
+        public void AddNode(Node node)
+        {
+            if (Head == null && Tail == null)
+            {
+                Head = node;
+                Tail = node;
+            }
             else
             {
-                Node temp = Head;
-                while (temp.next != null)
-                    temp = temp.next;
-                temp.next = node;
+                node.next = Head;
+                Head = node;
             }
         }
 
