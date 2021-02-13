@@ -16,7 +16,7 @@ namespace NUnitTestProject
         }
 
         [Test]
-        public void GivenNodes_WhenAddedToStack_ShouldPassStackTest()
+        public void GivenNodes_WhenAddedToQueue_ShouldPassQueueTest()
         {
             Node node1 = new Node(56);
             Node node2 = new Node(30);
