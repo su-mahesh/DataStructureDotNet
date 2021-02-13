@@ -88,5 +88,26 @@ namespace DataStructure
             }           
             return temp;
         }
+
+        public Node PopLast()
+        {
+            Node TailTemp = Tail;
+            if (!IsEmpty())
+            {
+                Node temp = Head;
+                while (temp.next != Tail)
+                {
+                    temp = temp.next;
+                }                
+                temp.next = null;
+                Tail = temp;               
+            }
+            return TailTemp;
+        }
+
+        public bool IsEmpty()
+        {
+            return Head == null && Tail == null;
+        }
     }
 }
