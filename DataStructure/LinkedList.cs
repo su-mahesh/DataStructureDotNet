@@ -109,5 +109,17 @@ namespace DataStructure
         {
             return Head == null && Tail == null;
         }
+
+        public bool IsNodePresent(Node SearchNode)
+        {
+            Node temp = Head;
+            while (temp != Tail)
+            {
+                if (temp.data.Equals(SearchNode.data))
+                    return true;
+                temp = temp.next;
+            }
+            return false;
+        }
     }
 }

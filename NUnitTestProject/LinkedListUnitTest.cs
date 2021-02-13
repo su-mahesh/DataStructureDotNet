@@ -114,5 +114,21 @@ namespace NUnitTestProject
                           List.Tail.Equals(node2);
             Assert.IsTrue(result);
         }
+
+        [Test]
+        public void GivenNodes_WhenSearchedNode_ShouldReturnTrue()
+        {
+            Node node1 = new Node(56);
+            Node SearchNode = new Node(30);
+            Node node3 = new Node(70);
+
+            List.AppendNode(node1);
+            List.AppendNode(SearchNode);
+            List.AppendNode(node3);
+
+            bool result = List.IsNodePresent(SearchNode);
+
+            Assert.IsTrue(result);
+        }
     }
 }
